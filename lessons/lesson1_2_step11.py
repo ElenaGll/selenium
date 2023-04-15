@@ -1,6 +1,5 @@
 import time
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 
 
 link = 'https://suninjuly.github.io/text_input_task.html'
