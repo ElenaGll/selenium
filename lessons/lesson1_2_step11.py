@@ -4,7 +4,7 @@ from selenium import webdriver
 
 link = 'https://suninjuly.github.io/text_input_task.html'
 
-# Конструкция with .. as гарантирует, что файл будет закрыт вне зависимости
+# Конструкция with .. as гарантирует, что браузер будет закрыт вне зависимости
 # от того, что введёт пользователь (чтобы не использовать browser.quit())
 with webdriver.Chrome() as browser:
     time.sleep(3)

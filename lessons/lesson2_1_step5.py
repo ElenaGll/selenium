@@ -10,6 +10,7 @@ with webdriver.Chrome() as browser:
 
     x_element = browser.find_element(by='id', value='input_value')
     x = x_element.text
+    print(x_element, x)
 
     def calculate(value):
         return str(math.log(abs(12*math.sin(int(x)))))
