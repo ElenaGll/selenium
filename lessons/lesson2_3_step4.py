@@ -3,10 +3,16 @@ import math
 import time
 
 
-link = 'https://SunInJuly.github.io/execute_script.html'
+link = 'http://suninjuly.github.io/alert_accept.html'
 
 with webdriver.Chrome() as browser:
     browser.get(link)
+
+    submit1 = browser.find_element(by='css selector', value='button.btn')
+    submit1.click()
+
+    confirm = browser.switch_to.alert
+    confirm.accept()
 
     value_x = browser.find_element(by='id', value='input_value')
     x = value_x.text
@@ -19,14 +25,10 @@ with webdriver.Chrome() as browser:
     answer = browser.find_element(by='id', value='answer')
     answer.send_keys(result)
 
-    browser.execute_script("window.scrollBy(0, 200);")
+    submit2 = browser.find_element(by='css selector', value='button.btn')
+    submit2.click()
 
-    check_box = browser.find_element(by='id', value='robotCheckbox')
-    check_box.click()
-
-    radio_bottom = browser.find_element(by='id', value='robotsRule')
-    radio_bottom.click()
-
-    submit = browser.find_element(by='css selector', value='button.btn')
-    submit.click()
+    alert = browser.switch_to.alert
+    print(alert.text)
+    alert.accept()
     time.sleep(2)

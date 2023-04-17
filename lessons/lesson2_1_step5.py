@@ -15,21 +15,17 @@ with webdriver.Chrome() as browser:
     def calculate(value):
         return str(math.log(abs(12*math.sin(int(x)))))
 
-    answer = calculate(x)
-    time.sleep(0.5)
+    result = calculate(x)
 
-    input1 = browser.find_element(by='id', value='answer')
-    input1.send_keys(answer)
-    time.sleep(0.5)
+    answer = browser.find_element(by='id', value='answer')
+    answer.send_keys(result)
 
     check_robot = browser.find_element(by='css selector', value='[for="robotCheckbox"]')
     check_robot.click()
-    time.sleep(0.5)
 
     radio_robot = browser.find_element(by='css selector', value='[for="robotsRule"]')
     radio_robot.click()
-    time.sleep(0.5)
 
     submit = browser.find_element(by='css selector', value='button.btn')
     submit.click()
-    time.sleep(1)
+    time.sleep(2)

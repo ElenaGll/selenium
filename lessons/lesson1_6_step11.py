@@ -3,24 +3,22 @@ import time
 
 
 link1 = 'http://suninjuly.github.io/registration1.html'
-link2 = 'http://suninjuly.github.io/registration2.html'
+link2 = 'http://suninjuly.github.io/registration2.html' # Raise error 'NoSuchElementException
 
 with webdriver.Chrome() as browser:
     browser.get(link1)
-    time.sleep(2)
 
-    input1 = browser.find_element(by='css selector', value='div.first_block input.form-control.first')
-    input1.send_keys('Elena')
+    first_name = browser.find_element(by='css selector', value='div.first_block input.form-control.first')
+    first_name.send_keys('Elena')
 
-    input2 = browser.find_element(by='css selector', value='div.first_block input.form-control.second')
-    input2.send_keys('Donyakina')
+    last_name = browser.find_element(by='css selector', value='div.first_block input.form-control.second')
+    last_name.send_keys('Donyakina')
 
-    input3 = browser.find_element(by='css selector', value='div.first_block input.form-control.third')
-    input3.send_keys('home@gmail.com')
+    email = browser.find_element(by='css selector', value='div.first_block input.form-control.third')
+    email.send_keys('home@gmail.com')
 
-    button = browser.find_element(by='css selector', value='button.btn')
-    button.click()
-    time.sleep(3)
+    submit = browser.find_element(by='css selector', value='button.btn')
+    submit.click()
 
     welcome_text_elt = browser.find_element(by='tag name', value='h1')
     welcome_text = welcome_text_elt.text
