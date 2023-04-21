@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .idea/
+tests/test_lesson3_6_step4.py
