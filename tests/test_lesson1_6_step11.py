@@ -24,7 +24,7 @@ def test_get_welcome_text(browser):
     with allure.step('Successful registration'):
         welcome_text_elt = browser.find_element(by='tag name', value='h1')
         welcome_text = welcome_text_elt.text
-        assert 'Congratulations You have successfully registered!' == welcome_text
+        assert 'Congratulations! You have successfully registered!' == welcome_text
 
 
 @allure.story('Registration invalid form')
