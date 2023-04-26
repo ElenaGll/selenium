@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
       - name: Test with pytest
         run: |
-          pytest --alluredir=allure-results
+          pytest -v --alluredir=allure-results
         continue-on-error: true
       - name: Get Allure history
         uses: actions/checkout@v2
