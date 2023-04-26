@@ -12,14 +12,13 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       # Чекаутим код
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
 
       # Устанавливаем python нужной версии
       - name: Set up Python
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-          architecture: 'x64'
 
       - name: Set up Chrome
       - uses: browser-actions/setup-chrome@latest
