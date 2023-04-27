@@ -6,21 +6,23 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container:
+      image: docker://<hellengoll>/<selenium>:latest
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-          architecture: 'x64'
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+#      - name: Set up Python 3.11
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.11'
+#          architecture: 'x64'
+#      - name: Display Python version
+#        run: python -c "import sys; print(sys.version)"
+#      - name: Install dependencies
+#        run: |
+#          python -m pip install --upgrade pip
+#          pip install -r requirements.txt
       - name: Test with pytest
         run: |
-          pytest -v
+          pytest -v tests/
         continue-on-error: true
