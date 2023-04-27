@@ -7,7 +7,7 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: docker://<hellengoll>/<selenium>:latest
+      image: docker://hellengoll/selenium:latest
 
     steps:
       - uses: actions/checkout@v3
