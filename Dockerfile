@@ -13,4 +13,4 @@ RUN apt-get update && apt-get -y install google-chrome-stable
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
-CMD ["pytest", "-v"]    
+CMD pytest -v
