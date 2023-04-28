@@ -1,8 +1,10 @@
-FROM python:3
+FROM python:3.11
+LABEL maintainer='hellengoll@gmail.com'
 
 WORKDIR /selenium
 COPY . .
 
+# Chrome
 RUN apt-get update; apt-get clean
 RUN apt-get install -y wget
 RUN apt-get install -y gnupg
