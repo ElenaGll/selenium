@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 .idea/
 tests/test_lesson3_6_step4.py
+tests/
