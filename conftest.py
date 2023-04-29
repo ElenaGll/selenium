@@ -17,9 +17,9 @@ def browser(request):
 
     if browser_name == 'chrome':
         chrome_options = webdriver.ChromeOptions()
-        # chrome_options.add_argument("--no-sandbox")
-        # chrome_options.add_argument("--headless")
-        # chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-gpu")
         chrome_options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
         browser = webdriver.Chrome(options=chrome_options)
 
